@@ -1,0 +1,137 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: 000;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.calculadora {
+    background: #222;
+    padding: 20px;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#resultado { 
+    background: #222;
+    color: #fff;
+    height: 60px;
+    font-size: 30px;
+    text-align: right;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Inter', sans-serif;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    background: #cccccc;
+    color: #000;
+    border: none;
+    padding: 15px;
+    font-size: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+.btn:active  {
+    transform: scale(0.97);
+}
+
+.operador {
+    background: #0084ff;
+    color: #fff;
+    font-size: 38px;
+}
+
+.igual {
+    background: #0084ff;
+    color: #fff;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.calculadora {
+    width: 100%;
+    max-width: 380px;
+    margin: 16px auto;
+    padding: 18px;
+}
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+.btn {
+    padding: 14px;
+    font-size: clamp(16px2.6vw, 20px);
+    min-height: 48px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+@media (max-widht: 360px) {
+    .calculadora { padding: 12px; }
+    #resultado {
+        font-size: clamp(24px, 6.5vw, 360px);
+        padding: 10px;
+        min-height: 50px;
+    }
+    .btn { padding: 12px; font-size: 18px;}
+}
+
+@media (min-width: 880px) {
+    .calculadora {
+        max-width: 460px; 
+        padding: 28px;
+    }
+    #resultado {
+        font-size: 40px;
+        min-height: 72px;
+    }
+    .btn {
+        padding: 18px;
+        font-size: 20px;
+    }
+    .btn, .operador, .igual {
+        font-size: 32px !important;
+    }
+    #resultado {
+        position: relative;
+    }
+
+    #resultado .valor {
+        position: absolute;
+        right: 18px;
+        bottom: 10px;
+        font-size: 40px;
+        line-height: 1;
+    }
+}
